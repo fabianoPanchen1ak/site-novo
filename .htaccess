@@ -1,0 +1,18 @@
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ensino/cursog/([A-Za-z0-9]+) ensino/cursog/curso.php?id=$1 [QSA]
+RewriteRule ^ead/cursog/([A-Za-z0-9]+) ead/cursog/curso.php?id=$1 [QSA]
+RewriteRule ^ensino/cursop/([A-Za-z0-9]+) ensino/cursop/curso.php?id=$1 [QSA]
+RewriteRule ^ead/cursop/([A-Za-z0-9]+) ead/cursop/curso.php?id=$1 [QSA]
+RewriteRule ^ensino/cursom/([A-Za-z0-9]+) ensino/cursop/curso.php?id=$1 [QSA]
+RewriteRule ^ensino/cursod/([A-Za-z0-9]+) ensino/cursop/curso.php?id=$1 [QSA]
+RewriteRule ^extensao/cursoq/([A-Za-z0-9]+) extensao/cursoq/curso.php?id=$1 [QSA]
+RewriteRule ^ead/cursoq/([A-Za-z0-9]+) ead/cursoq/curso.php?id=$1 [QSA]
+RewriteRule ^pagina_inicial/noticias/([A-Za-z0-9]+) pagina_inicial/noticias/noticia.php?id=$1 [QSA]
+RewriteRule ^noticias/([A-Za-z0-9]+) pagina_inicial/noticias/noticia.php?id=$1 [QSA]
+RewriteRule ^insc/([A-Za-z0-9]+) https://conteudo.unc.br/unc/redirecionamentolink/?i=$1 [QSA]
+
